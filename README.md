@@ -34,11 +34,11 @@ cd SAE203 - IzyDocs
 
 | Nom | Rôle |
 |-----|------|
-| 1 | Chef de projet |
-| — | Développeur |
-| — | Designer |
-| — | Autre |
-| — | Développeur |
+| Mze Ali Ziyad | Chef de projet |
+| Moutama-Cerveaux Keran | Développeur |
+| Pichecanon Kendro | Designer |
+| Mauve Lenny | Argumentaire |
+| Mauve-Dulac Nathan | Développeur |
 
 ## 📜 Licence
 
