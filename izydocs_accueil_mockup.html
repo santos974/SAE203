@@ -1,0 +1,254 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.app{background:#0F1E35;min-height:100vh;border-radius:16px;overflow:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:#0F1E35;border-bottom:1px solid rgba(255,255,255,0.07)}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-text{font-size:20px;font-weight:500;color:#fff;letter-spacing:-.3px}
+.logo-text span{color:#7B8CDE}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;cursor:pointer;transition:color .15s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff}
+.nav-right{display:flex;align-items:center;gap:12px}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2A5FC5,#7B5EA7);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff}
+.notif{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;cursor:pointer}
+
+.hero{padding:52px 28px 36px;background:#0F1E35;position:relative;overflow:hidden}
+.hero-deco{position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:rgba(123,92,167,0.12)}
+.hero-deco2{position:absolute;bottom:-80px;right:80px;width:200px;height:200px;border-radius:50%;background:rgba(42,95,197,0.1)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(123,140,222,0.15);border:1px solid rgba(123,140,222,0.25);border-radius:20px;padding:4px 12px;font-size:12px;color:#7B8CDE;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:#7B8CDE}
+.hero h1{font-size:32px;font-weight:500;color:#fff;line-height:1.2;margin-bottom:10px;max-width:460px}
+.hero h1 em{font-style:normal;color:#7B8CDE}
+.hero p{font-size:14px;color:rgba(255,255,255,0.5);max-width:420px;line-height:1.7;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#2A5FC5,#7B5EA7);color:#fff;font-size:14px;font-weight:500;padding:11px 22px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;transition:opacity .15s}
+.btn-primary:hover{opacity:.9}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);font-size:14px;padding:11px 22px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);cursor:pointer;transition:background .15s}
+.btn-secondary:hover{background:rgba(255,255,255,0.11)}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0 28px 28px}
+.stat{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px 18px}
+.stat-num{font-size:24px;font-weight:500;color:#fff;margin-bottom:2px}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.4)}
+.stat-trend{font-size:11px;color:#4CAF93;margin-top:6px}
+
+.main{display:grid;grid-template-columns:1fr 300px;gap:16px;padding:0 28px 28px}
+
+.section-title{font-size:13px;font-weight:500;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+
+.types-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.type-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px;cursor:pointer;transition:border-color .15s,background .15s;position:relative;overflow:hidden}
+.type-card:hover{border-color:rgba(123,140,222,0.4);background:rgba(123,140,222,0.06)}
+.type-card.featured{border-color:rgba(123,92,167,0.5);background:rgba(42,95,197,0.08)}
+.type-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.icon-sec{background:rgba(42,95,197,0.2)}
+.icon-res{background:rgba(123,92,167,0.2)}
+.icon-net{background:rgba(44,180,149,0.15)}
+.icon-qual{background:rgba(200,130,50,0.15)}
+.type-name{font-size:14px;font-weight:500;color:#fff;margin-bottom:4px}
+.type-desc{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.5}
+.type-tag{position:absolute;top:14px;right:14px;font-size:10px;background:rgba(123,92,167,0.3);color:#AFA9EC;border-radius:20px;padding:2px 8px}
+
+.recent-list{display:flex;flex-direction:column;gap:10px}
+.audit-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:14px 16px;cursor:pointer;transition:border-color .15s}
+.audit-item:hover{border-color:rgba(255,255,255,0.15)}
+.audit-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.audit-client{font-size:14px;font-weight:500;color:#fff}
+.audit-date{font-size:11px;color:rgba(255,255,255,0.35)}
+.audit-type{font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:8px}
+.risk-pill{font-size:11px;padding:2px 10px;border-radius:20px;display:inline-block}
+.risk-high{background:rgba(220,60,60,0.15);color:#F07070}
+.risk-med{background:rgba(200,140,40,0.15);color:#E0A040}
+.risk-low{background:rgba(44,180,149,0.15);color:#4CAF93}
+
+.sidebar-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px;margin-bottom:14px}
+.sidebar-title{font-size:13px;font-weight:500;color:#fff;margin-bottom:14px}
+.step-item{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.step-num{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#fff;flex-shrink:0}
+.sn1{background:#2A5FC5} .sn2{background:#4E47A0} .sn3{background:#7B5EA7} .sn4{background:#9C6CB5}
+.step-text{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4}
+
+.progress-item{margin-bottom:12px}
+.progress-header{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px}
+.progress-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;border-radius:2px}
+.pf-blue{background:linear-gradient(90deg,#2A5FC5,#7B8CDE)}
+.pf-purple{background:linear-gradient(90deg,#7B5EA7,#AFA9EC)}
+.pf-teal{background:linear-gradient(90deg,#0F6E56,#4CAF93)}
+
+.new-btn{width:100%;background:linear-gradient(135deg,#2A5FC5,#7B5EA7);color:#fff;font-size:14px;font-weight:500;padding:13px;border-radius:10px;border:none;cursor:pointer;margin-top:4px;transition:opacity .15s}
+.new-btn:hover{opacity:.9}
+</style>
+
+<h2 class="sr-only">Maquette de l'écran d'accueil IzyDocs</h2>
+
+<div class="app">
+
+  <nav class="nav">
+    <div class="logo-wrap">
+      <svg width="36" height="36" viewBox="0 0 36 36">
+        <rect width="36" height="36" rx="9" fill="#1B3A6B"/>
+        <path d="M8 10 Q8 8 10 8 L14 8 Q16 8 16 10 L16 26 Q16 28 14 28 L10 28 Q8 28 8 26 Z" fill="#3B8BD4" opacity="0.85"/>
+        <path d="M13 10 Q19 8 24 12 L28 18 Q30 21 27 24 L22 28 Q18 30 14 27 L13 26" fill="none" stroke="#7BB8F0" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M18 18 Q22 15 26 18" fill="none" stroke="#B5D4F4" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+      <div class="logo-text">Izy<span>Docs</span></div>
+    </div>
+    <div class="nav-links">
+      <a class="active">Accueil</a>
+      <a>Mes audits</a>
+      <a>Modèles</a>
+      <a>Documents</a>
+      <a>Paramètres</a>
+    </div>
+    <div class="nav-right">
+      <div class="notif">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a4.5 4.5 0 0 0-4.5 4.5c0 2.5-.8 3.5-1.5 4h12c-.7-.5-1.5-1.5-1.5-4A4.5 4.5 0 0 0 8 2Z" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/><path d="M9.5 13.5a1.5 1.5 0 0 1-3 0" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/></svg>
+      </div>
+      <div class="avatar">JD</div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-deco"></div>
+    <div class="hero-deco2"></div>
+    <div class="hero-badge"><div class="badge-dot"></div>Audit de sécurité informatique</div>
+    <h1>L'excellence documentaire<br>au service des <em>experts</em></h1>
+    <p>Générez des rapports d'audit professionnels en quelques minutes. Sélectionnez vos constats, IzyDocs construit votre document.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="sendPrompt('Génère-moi un écran de création d\'un nouvel audit de sécurité pour IzyDocs')">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Nouvel audit
+      </button>
+      <button class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/><path d="M5 7h6M5 10h4" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Voir mes documents
+      </button>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Audits réalisés</div>
+      <div class="stat-trend">+3 ce mois</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Documents générés</div>
+      <div class="stat-trend">+2 cette semaine</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">47</div>
+      <div class="stat-label">Préconisations émises</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" style="color:#F07070">3</div>
+      <div class="stat-label">Risques critiques détectés</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div>
+      <div class="section-title">Types d'audit disponibles</div>
+      <div class="types-grid">
+        <div class="type-card featured">
+          <div class="type-tag">Disponible</div>
+          <div class="type-icon icon-sec">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L4 5.5v5c0 4.5 3.1 8.7 7 9.5 3.9-.8 7-5 7-9.5v-5L11 2Z" stroke="#7BB8F0" stroke-width="1.5" fill="rgba(42,95,197,0.2)"/><path d="M8 11l2 2 4-4" stroke="#7BB8F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="type-name">Audit de sécurité informatique</div>
+          <div class="type-desc">Mots de passe, réseau, sauvegardes, accès, antivirus, MFA…</div>
+        </div>
+        <div class="type-card">
+          <div class="type-tag" style="color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06)">Bientôt</div>
+          <div class="type-icon icon-res">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="7" height="7" rx="2" stroke="#AFA9EC" stroke-width="1.5"/><rect x="12" y="3" width="7" height="7" rx="2" stroke="#AFA9EC" stroke-width="1.5" opacity=".5"/><rect x="3" y="12" width="7" height="7" rx="2" stroke="#AFA9EC" stroke-width="1.5" opacity=".5"/><rect x="12" y="12" width="7" height="7" rx="2" stroke="#AFA9EC" stroke-width="1.5" opacity=".3"/></svg>
+          </div>
+          <div class="type-name">Audit réseau</div>
+          <div class="type-desc">Infrastructure, topologie, segmentation, pare-feu…</div>
+        </div>
+        <div class="type-card">
+          <div class="type-tag" style="color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06)">Bientôt</div>
+          <div class="type-icon icon-net">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3v4M11 15v4M3 11h4M15 11h4" stroke="#4CAF93" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="11" r="3" stroke="#4CAF93" stroke-width="1.5"/></svg>
+          </div>
+          <div class="type-name">Audit de conformité</div>
+          <div class="type-desc">RGPD, ISO 27001, NIS2, politiques internes…</div>
+        </div>
+        <div class="type-card">
+          <div class="type-tag" style="color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06)">Bientôt</div>
+          <div class="type-icon icon-qual">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 5.5 6 .8-4.3 4.2 1 6L11 15.5 5.8 18.5l1-6L2.5 8.3l6-.8L11 2Z" stroke="#E0A040" stroke-width="1.5" fill="rgba(200,140,40,0.12)"/></svg>
+          </div>
+          <div class="type-name">Audit qualité</div>
+          <div class="type-desc">Processus, documentation, indicateurs, non-conformités…</div>
+        </div>
+      </div>
+
+      <div class="section-title">Audits récents</div>
+      <div class="recent-list">
+        <div class="audit-item">
+          <div class="audit-top"><span class="audit-client">Société Générale BTP</span><span class="audit-date">07 avr. 2026</span></div>
+          <div class="audit-type">Audit de sécurité · Jean Dupont</div>
+          <span class="risk-pill risk-high">Risque élevé</span>
+        </div>
+        <div class="audit-item">
+          <div class="audit-top"><span class="audit-client">Mairie de Saint-Denis</span><span class="audit-date">02 avr. 2026</span></div>
+          <div class="audit-type">Audit de sécurité · Marie Fontaine</div>
+          <span class="risk-pill risk-med">Risque moyen</span>
+        </div>
+        <div class="audit-item">
+          <div class="audit-top"><span class="audit-client">CHU de La Réunion</span><span class="audit-date">28 mars 2026</span></div>
+          <div class="audit-type">Audit de sécurité · Jean Dupont</div>
+          <span class="risk-pill risk-low">Risque faible</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-title">Comment ça marche</div>
+      <div class="sidebar-card">
+        <div class="step-item">
+          <div class="step-num sn1">1</div>
+          <div class="step-text">Renseigner les infos du client et du contexte</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num sn2">2</div>
+          <div class="step-text">Répondre au questionnaire par thème</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num sn3">3</div>
+          <div class="step-text">Prévisualiser le rapport généré</div>
+        </div>
+        <div class="step-item" style="margin-bottom:0">
+          <div class="step-num sn4">4</div>
+          <div class="step-text">Exporter en PDF ou DOCX</div>
+        </div>
+      </div>
+
+      <div class="section-title">Progression globale</div>
+      <div class="sidebar-card">
+        <div class="progress-item">
+          <div class="progress-header"><span>Questionnaire sécurité</span><span>78%</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-blue" style="width:78%"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-header"><span>Préconisations rédigées</span><span>54%</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-purple" style="width:54%"></div></div>
+        </div>
+        <div class="progress-item" style="margin-bottom:0">
+          <div class="progress-header"><span>Documents exportés</span><span>38%</span></div>
+          <div class="progress-bar"><div class="progress-fill pf-teal" style="width:38%"></div></div>
+        </div>
+      </div>
+
+      <button class="new-btn" onclick="sendPrompt('Génère-moi un écran de questionnaire QCM pour un audit de sécurité informatique dans IzyDocs')">
+        + Commencer un nouvel audit
+      </button>
+    </div>
+  </div>
+
+</div>
