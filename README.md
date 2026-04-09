@@ -42,5 +42,5 @@ cd SAE203 - IzyDocs
 
 ## 📜 Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](./LICENSE).
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](./LICENSE(1)).
 
