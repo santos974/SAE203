@@ -128,4 +128,4 @@ Les principaux risques couverts : injections SQL, XSS, gestion des sessions, aut
 
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](./LICENSE).
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](./LICENSE(1)).
