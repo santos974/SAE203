@@ -98,11 +98,11 @@ Les principaux risques couverts : injections SQL, XSS, gestion des sessions, aut
 
 | Nom | Rôle | GitHub |
 |-----|------|--------|
-| — | Chef de projet | [@username]() |
-| — | Développeur back-end (PHP) | [@username]() |
-| — | Développeur front-end (JS/CSS) | [@username]() |
-| — | Testeur / QA | [@username]() |
-| — | DevOps / Documentation | [@username]() |
+| MZE-ALI Ziyad | Chef de projet | [@username]() |
+| MOUTAMA-CERVEAUX Keran | Développeur back-end (PHP) | [@username]() |
+| MAUVE-DULAC Nathan | Développeur front-end (JS/CSS) | [@username]() |
+| MAUVE Lenny | Testeur / QA | [@username]() |
+| PICHECANOM Kendro | Design / Comm | [@username]() |
 
 > Remplacez les `—` et `@username` par les vraies informations de l'équipe.
 
