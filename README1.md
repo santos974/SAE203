@@ -1,4 +1,4 @@
-# AuditSec — Générateur d'audits de sécurité informatique
+# IzyDocs — Générateur d'audits de sécurité informatique
 
 ![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?logo=php&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
@@ -25,7 +25,7 @@
 
 ## Présentation
 
-AuditSec est une application web développée dans le cadre d'un projet de groupe. Elle permet à des experts en sécurité informatique de :
+IzyDocs est une application web développée dans le cadre d'un projet de groupe. Elle permet à des experts en sécurité informatique de :
 
 - Configurer et lancer des audits de sécurité (réseau, web, infrastructure)
 - Générer automatiquement des rapports structurés
@@ -55,8 +55,8 @@ Consultez la documentation complète d'installation :
 En résumé :
 
 ```bash
-git clone https://github.com/VOTRE_USERNAME/auditsec.git
-cd auditsec
+git clone https://github.com/VOTRE_USERNAME/IzyDocs.git
+cd IzyDocs
 cp config/config.example.php config/config.php
 # Remplir config.php avec vos paramètres
 composer install
