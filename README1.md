@@ -104,7 +104,7 @@ Les principaux risques couverts : injections SQL, XSS, gestion des sessions, aut
 | MAUVE Lenny | Testeur / QA | 
 | PICHECANOM Kendro | Design / Comm |
 
-> Remplacez les `—` et `@username` par les vraies informations de l'équipe.
+
 
 ---
 
